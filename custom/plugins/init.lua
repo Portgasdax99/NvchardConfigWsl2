@@ -87,9 +87,14 @@ return {
 
   -- get highlight group under cursor
   ["nvim-treesitter/playground"] = {
-    cmd = "TSCaptureUnderCursor",
+    module = "nvim-treesitter",
+    setup = function()
+      require("core.lazy_load").on_file_open "nvim-treesitter"
+    end,
+    cmd = require("core.lazy_load").treesitter_cmds,
+    run = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup()
+      require "plugins.configs.treesitter"
     end,
   },
 
@@ -134,4 +139,36 @@ return {
     end,
   },
 
+  -- basic diagrams for flow charts etc
+  ["jbyuki/venn.nvim"] = {
+    module = "venn.nvim",
+    config = function()
+      require("custom.plugins.venn").setup()
+    end,
+  },
+
+  ["karb94/neoscroll.nvim"] = {
+    config = function()
+      require "custom.plugins.neoscroll"
+    end,
+  },
+
+   -- notes stuff
+   ["nvim-neorg/neorg"] = {
+    tag = "0.0.12",
+    ft = "norg",
+    after = "nvim-treesitter",
+    setup = function()
+      require("custom.plugins.neorg").autocmd()
+    end,
+    config = function()
+      require("custom.plugins.neorg").setup()
+    end,
+  },
+
+  ["folke/trouble.nvim"] = {
+    config = function()
+      require "custom.plugins.trouble"
+    end,
+  },
 }

@@ -1,18 +1,10 @@
 local M = {}
 
 M.plugins = require "custom.plugins"
---
--- M.options = {
---   nvChad = {
---     update_branch = "dev",
---   },
--- }
 
 M.ui = {
-  -- theme stuff
-theme = "everforest",
-  transparency = false,
-  theme_toggle = { "everforest", "everforest_light" },
+  theme = "gruvbox",
+  theme_toggle = { "radium", "one_light" },
   hl_add = require("custom.highlights").new_hlgroups,
   hl_override = require("custom.highlights").overriden_hlgroups,
 }
