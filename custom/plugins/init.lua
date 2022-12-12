@@ -26,14 +26,14 @@ return {
   },
 
   -- override default configs
-  ["kyazdani42/nvim-tree.lua"] = { 
+  ["kyazdani42/nvim-tree.lua"] = {
     rm_default_opts = true,
     after = "ui",
     config = function()
-    require "custom.plugins.nvim-tree"
-  end,
- },
- 
+      require "custom.plugins.nvim-tree"
+    end,
+  },
+
   ["nvim-treesitter/nvim-treesitter"] = { override_options = overrides.treesitter },
   ["lukas-reineke/indent-blankline.nvim"] = { override_options = overrides.blankline },
   ["williamboman/mason.nvim"] = { override_options = overrides.mason },
@@ -153,8 +153,8 @@ return {
     end,
   },
 
-   -- notes stuff
-   ["nvim-neorg/neorg"] = {
+  -- notes stuff
+  ["nvim-neorg/neorg"] = {
     tag = "0.0.12",
     ft = "norg",
     after = "nvim-treesitter",
@@ -169,6 +169,13 @@ return {
   ["folke/trouble.nvim"] = {
     config = function()
       require "custom.plugins.trouble"
+    end,
+  },
+  -- edit multiple word
+  --
+  ["mg979/vim-visual-multi"] = {
+    config = function()
+      require "custom.plugins.vim-visual-multi"
     end,
   },
 }
