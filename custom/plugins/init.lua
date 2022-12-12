@@ -178,4 +178,7 @@ return {
       require "custom.plugins.vim-visual-multi"
     end,
   },
+
+  --
+  ["p00f/nvim-ts-rainbow"] = {},
 }
