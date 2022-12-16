@@ -15,6 +15,7 @@ M.treesitter = {
     "bash",
     "lua",
     "norg",
+    "vue",
   },
   rainbow = {
     enable = true,
@@ -125,6 +126,7 @@ M.mason = {
     "deno",
     "emmet-ls",
     "json-lsp",
+    "vue",
 
     -- shell
     "shfmt",
